@@ -1,0 +1,37 @@
+---
+title: "Milestone 2: Pros and Cons"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Tesla Stock and Elon Musk Tweets
+
+## Pros
+-There are a ton of data points availible from Twitter.
+
+-The graph of trading volume is really well constructed, with each day having previews of his tweets from that day.
+
+-This is an interesting and relevant topic.
+
+-Learning to scrape data from the Twitter API might be useful in the future, as this is very in right now.
+
+
+## Cons
+-This person had to do a lot of data gathering and cleaning themselves which is extra work.
+
+-There isn't a clear outcome or learning point taken from the data.
+
+# Game of Thrones Analysis
+
+## Pros
+-I love Game of Thrones.
+
+-There are tools presented to allow the user to compare smaller data sets and manipulate the graphs themselves.
+
+## Cons
+-It isn't clear how this data is useful, or what insight it gives us into the writings of Game of Thrones.
+
+-The data analysis seems a little bit simplisitc, and word clouds are cliche.
