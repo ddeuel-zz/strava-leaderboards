@@ -1,0 +1,23 @@
+---
+title: "Milestone 3"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+10/1/19
+
+# My Data
+
+## Where I got it
+
+Through the Strava API. I'm still deciding on whether to use the Python Stravalib library, or HTTPie requests to retrieve the data. I might even consider doing HTML scraping from their website in order to retrieve some data that is not availible through the API.
+
+## What I have done with it so far
+
+So far, I have only been looking at my data and deciding how I would want to use it, and how much of it I should collect. It took me a long time to figure out how to access my data through the API, and I'm still not sure that the data is high enough quality or quantity. I have downloaded a few different leaderboards for different segments to explore how I might be able to present the data in an interesting way.
+
+## What I plan to do with it
+
+I had originally wanted to create a model relating climbing time to average power for the most popular climbs around the world. After delving into the API, I realize that the power data needed for that model is not availible, and I would have to webscrape in order to retrieve it. I may do that and still create that model, otherwise if I want to stay within the confines of the API, I could still build a data base of climb times and make a few different graphic visualizations to play with them. I also intend to leverage the Google Maps API to display the segments on Google Maps given the polyline code availible from the API for each segment.
