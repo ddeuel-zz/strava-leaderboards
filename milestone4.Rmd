@@ -1,0 +1,17 @@
+---
+title: "Milestone 4"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library("rjson")
+
+lookout_leaderboard <- fromJSON(file = "lookout.json")
+
+print(lookout_leaderboard)
+
+```
+10/11/19
+
