@@ -1,3 +1,6 @@
+# Shiny App Folder
+/rsconnect
+
 # History files
 .Rhistory
 .Rapp.history

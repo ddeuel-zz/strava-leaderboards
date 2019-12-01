@@ -1,0 +1,14 @@
+# input on Mac OS terminal
+# i is varied to minimize abs(i*200-total_entries)
+# authorization token expires frequently and must be updated from Strava's website
+Strava API requests:
+
+for ((i=1; i<126; i++)); do http GET "https://www.strava.com/api/v3/segments/3827423/leaderboard?page=$i&per_page=200&context_entries=0&gender=M" "Authorization: Bearer c62890b92f041fdc89622fd579e7d3f3b80aa90c" >> wal.txt; done
+
+http GET "https://www.strava.com/api/v3/segments/3827423" "Authorization: Bearer c62890b92f041fdc89622fd579e7d3f3b80aa90c" >> wal_meta.txt
+
+# replace this regular expression by a comma
+# remove extra commas when pages exceed total entries
+Sublime regular expression: 
+
+\]}{"effort_count":\d+,"entry_count":\d+,"kom_type":"kom","entries":\[
