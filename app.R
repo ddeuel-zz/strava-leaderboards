@@ -59,7 +59,7 @@ ui <- navbarPage("Strava Leaderboards",
                  ),
                  
                  tabPanel("About",
-                          includeMarkdown("about.md")
+                          includeMarkdown("README.md")
                  )
 )
 
