@@ -4,6 +4,8 @@ library(lubridate)
 library(shiny)
 library(data.table)
 library(googleway)
+library(htmltools)
+library(vembedr)
 
 
 google_api_key = "AIzaSyDdQiwustqK5psU4Qbemv7gNSysSrZa-gY"
@@ -55,7 +57,13 @@ ui <- navbarPage("Strava Leaderboards",
                                  max = 50000,
                                  value = 500),
                      plotOutput(outputId = "plot")
-                   )
+                   ),
+                   tags$style("#slope {font-size:30px"),
+                   textOutput(outputId = "slope"),
+                 ),
+                 
+                 tabPanel("Video",
+                          embed_url("https://youtu.be/n69iJT10O-w")
                  ),
                  
                  tabPanel("About",
@@ -104,6 +112,21 @@ server <- function(input, output, session) {
            y = "time (seconds)") +
       geom_point(show.legend = FALSE)
     }
+  })
+  
+  reactx <- reactive({
+    x <- rbindlist(get(input$leaderboard)$entries) %>% 
+      select(-moving_time, -start_date_local) %>%
+      mutate(start_date = ymd_hms(start_date)) %>%
+      filter(rank < input$ranks)
+  })
+  
+  reactpred <- reactive({
+    pred <- lm(formula = elapsed_time~rank, data = reactx())
+  })
+  
+  output$slope <- renderText({
+    paste0("Elapsed Time vs Rank Regression Coefficient: ", round(reactpred()$coefficients[2], 3))
   })
   
 }
